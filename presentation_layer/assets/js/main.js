@@ -1,4 +1,4 @@
-document.querySelector('form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('Función aún no implementada.');
-});
+// assets/js/main.js
+$(document).ready(function() {
+    // Código común para todas las páginas
+    });

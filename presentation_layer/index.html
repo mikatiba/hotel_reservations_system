@@ -4,81 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel XYZ - Inicio</title>
-    <!-- Enlaces a Bootstrap y estilos personalizados -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Hotel XYZ</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="login.html">Iniciar Sesión</a></li>
-                    <li class="nav-item"><a class="nav-link" href="register.html">Registrarse</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- Header (Barra de navegación) -->
+    <div id="header"></div>
 
-    <!-- Contenido principal -->
-    <div class="container mt-5">
-        <h1 class="mt-4">Bienvenido al Hotel XYZ</h1>
-        <p>Disfruta de una experiencia única en nuestro hotel de lujo.</p>
-
-        <!-- Mostrar habitaciones disponibles -->
-        <h2>Habitaciones Disponibles</h2>
-        <div class="row" id="habitaciones-disponibles">
-            <!-- Aquí se cargarán las habitaciones mediante AJAX -->
-        </div>
+    <!-- Banner -->
+    <div class="container-fluid bg-light text-center py-5">
+        <h1 class="display-4">Bienvenido al Hotel XYZ</h1>
+        <p class="lead">Disfruta de una experiencia única en nuestro hotel de lujo.</p>
+        <a href="register.html" class="btn btn-primary btn-lg mt-3">Haz tu reserva ahora</a>
     </div>
 
-    <!-- Footer -->
-    <footer class="py-4 bg-dark text-white-50">
-        <div class="container text-center">
-            <small>© 2023 Hotel XYZ. Todos los derechos reservados.</small>
+    <!-- Sección de Servicios -->
+    <section class="py-5 text-center">
+        <div class="container">
+            <h2 class="mb-4">Nuestros Servicios</h2>
+            <div class="row">
+                <div class="col-lg-4">
+                    <img src="assets/images/spa.jpg" alt="Spa" class="img-fluid rounded-circle mb-3">
+                    <h4>Spa</h4>
+                    <p>Relájate en nuestro spa de lujo con tratamientos exclusivos.</p>
+                </div>
+                <div class="col-lg-4">
+                    <img src="assets/images/piscina.jpg" alt="Piscina" class="img-fluid rounded-circle mb-3">
+                    <h4>Piscina</h4>
+                    <p>Disfruta de nuestra piscina con vistas panorámicas.</p>
+                </div>
+                <div class="col-lg-4">
+                    <img src="assets/images/gym.jpg" alt="Gimnasio" class="img-fluid rounded-circle mb-3">
+                    <h4>Gimnasio</h4>
+                    <p>Mantente en forma con nuestro gimnasio totalmente equipado.</p>
+                </div>
+            </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- Enlaces a JavaScript -->
+    <!-- Galería -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Galería</h2>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <img src="assets/images/habitacion1.jpg" class="img-fluid rounded" alt="Habitación 1">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <img src="assets/images/habitacion2.jpg" class="img-fluid rounded" alt="Habitación 2">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <img src="assets/images/habitacion3.jpg" class="img-fluid rounded" alt="Habitación 3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="py-5 text-center">
+        <div class="container">
+            <h2 class="mb-4">Contáctanos</h2>
+            <p class="mb-4">¿Tienes alguna pregunta? ¡Estamos aquí para ayudarte!</p>
+            <a href="contact.html" class="btn btn-primary btn-lg">Contáctanos</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- Enlaces a JS -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
-        // Cargar habitaciones disponibles al cargar la página
-        $(document).ready(function() {
-            $.ajax({
-                url: '/api/habitaciones/disponibles',
-                method: 'GET',
-                success: function(data) {
-                    var habitaciones = data;
-                    $.each(habitaciones, function(index, habitacion) {
-                        var habitacionHtml = `
-                            <div class="col-md-4">
-                                <div class="card mb-4">
-                                    <img class="card-img-top" src="${habitacion.imagen}" alt="Habitación ${habitacion.numero_habitacion}">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Habitación ${habitacion.numero_habitacion}</h5>
-                                        <p class="card-text">${habitacion.descripcion}</p>
-                                        <p class="card-text"><strong>Precio: $${habitacion.precio}</strong></p>
-                                        <a href="login.html" class="btn btn-primary">Reservar</a>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-                        $('#habitaciones-disponibles').append(habitacionHtml);
-                    });
-                },
-                error: function(error) {
-                    console.log('Error al cargar las habitaciones:', error);
-                }
-            });
+        // Cargar header y footer
+        $(function () {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
         });
     </script>
 </body>
 </html>
+
 
