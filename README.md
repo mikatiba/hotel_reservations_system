@@ -7,18 +7,18 @@ reservas.
 ## Arquitectura del Proyecto
 La aplicación está dividida en tres capas, cada una desplegada
 en una máquina virtual (VM) separada:
-1. **Capa de Presentación** (VM1)
+1. **Capa de Presentación** (VM1) (Mikael Tiba)
 - **Tecnologías**: HTML, CSS, Bootstrap, jQuery, jQuery
 DataTables
 - **Servidor Web**: NGINX
 - **Descripción**: Interfaz de usuario accesible desde el
 exterior a través de SERVEO.
 6
-2. **Capa de Lógica de Negocio** (VM2)
+2. **Capa de Lógica de Negocio** (VM2)(Felipe Diaz)
 - **Tecnologías**: Python Flask
 - **Descripción**: API RESTful que maneja la lógica de la
 aplicación y se comunica con la base de datos.
-3. **Capa de Datos** (VM3)
+3. **Capa de Datos** (VM3)(Johnny Mercado)
 - **Tecnologías**: MariaDB
 - **Descripción**: Base de datos que almacena la información
 de clientes, habitaciones y reservas.
