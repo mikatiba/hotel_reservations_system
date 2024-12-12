@@ -1,0 +1,1 @@
+La capa de presentación es responsable de interactuar con la API expuesta por la capa de lógica de negocio, enviando solicitudes HTTP a los endpoints configurados en el servidor (VM2) y validando las respuestas. Para ello, se configuró la máquina virtual (VM1) con la dirección IP 172.16.5.68.
