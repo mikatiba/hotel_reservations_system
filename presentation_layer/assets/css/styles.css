@@ -1,3 +1,4 @@
+/* Estilo para las tarjetas */
 .card {
     margin-bottom: 20px;
     border: 1px solid #ddd;
@@ -12,6 +13,7 @@
     border-bottom: 1px solid #ddd;
 }
 
+/* Imágenes fluidas con efecto de zoom */
 .img-fluid {
     transition: transform 0.3s ease-in-out;
 }
@@ -20,3 +22,83 @@
     transform: scale(1.1);
 }
 
+/* Fondo suave para el banner */
+.bg-blue-soft {
+    background-color: #B4E0E6; /* Azul Claro */
+    color: #003D4C; /* Azul oscuro para texto */
+    padding: 50px 20px; /* Espaciado para el banner */
+    text-align: center; /* Centrado del texto */
+}
+
+/* Fondo para Galería */
+.bg-sand-light {
+    background-color: #F5DEB3; /* Arena Suave */
+    padding: 40px 20px; /* Espaciado interno */
+}
+
+/* Texto en Azul Suave */
+.text-blue-soft {
+    color: #003D4C;
+}
+
+/* Texto Coral Claro */
+.text-coral {
+    color: #FFB6B9;
+}
+
+/* Botones personalizados */
+.btn-blue-soft {
+    background-color: #B4E0E6;
+    color: #003D4C;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-blue-soft:hover {
+    background-color: #92CAD1;
+}
+
+.btn-sand-light {
+    background-color: #F5DEB3;
+    color: #3E2C00; /* Marrón oscuro */
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-sand-light:hover {
+    background-color: #E0C0A8;
+}
+
+/* Espaciado general entre secciones */
+.section {
+    padding: 60px 20px; /* Espaciado vertical general */
+}
+
+.section h2 {
+    margin-bottom: 40px;
+    font-size: 2rem;
+    text-align: center;
+    color: #003D4C; /* Azul Suave */
+}
+
+.section p {
+    font-size: 1.2rem;
+    color: #555; /* Gris suave */
+}
+
+/* Footer */
+footer {
+    background-color: #003D4C; /* Azul oscuro */
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+}
+
+footer a {
+    color: #FFB6B9; /* Coral Claro */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
