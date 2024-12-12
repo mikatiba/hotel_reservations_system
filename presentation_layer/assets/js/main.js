@@ -1,37 +1,32 @@
-// assets/js/main.js
-$(document).ready(function() {
-    // Código común para todas las páginas
-    });
+$(document).ready(function () {
+    // Cargar header y footer dinámicamente
+    $("#header").load("header.html");
+    $("#footer").load("footer.html");
 
-    function saveToken(token) {
-        localStorage.setItem("token", token);
-    }
-    
-    function getToken() {
-        return localStorage.getItem("token");
-    }
-    
-    function isLoggedIn() {
-        return !!getToken();
-    }
-    
-    function logout() {
-        localStorage.removeItem("token");
-        window.location.href = "login.html";
-    }
-    
-    $(document).ready(function () {
-        if (isLoggedIn()) {
-            $(".navbar-nav").html(`
-                <li class="nav-item">
-                    <a class="nav-link" href="cliente/perfil.html">Mi Perfil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="logout" href="#">Cerrar Sesión</a>
-                </li>
-            `);
-    
-            $("#logout").on("click", logout);
-        }
+    // Inicializar AOS (animaciones)
+    AOS.init();
+
+    // Configurar eventos para los botones de "Ver detalles"
+    configureModals();
+});
+
+// Función para configurar los modales dinámicamente
+function configureModals() {
+    document.querySelectorAll('[data-bs-toggle="modal"]').forEach(button => {
+        button.addEventListener('click', function () {
+            const habitacion = this.getAttribute('data-habitacion');
+            const precio = this.getAttribute('data-precio');
+            const caracteristicas = this.getAttribute('data-caracteristicas');
+            const disponibilidad = this.getAttribute('data-disponibilidad');
+
+            // Actualizar el contenido del modal
+            document.querySelector('#detalleHabitacionLabel').textContent = `Detalles de la Habitación ${habitacion}`;
+            document.querySelector('#detalleHabitacion .modal-body').innerHTML = `
+                <p><strong>Precio:</strong> ${precio}</p>
+                <p><strong>Características:</strong> ${caracteristicas}</p>
+                <p><strong>Disponibilidad:</strong> ${disponibilidad}</p>
+            `;
+        });
     });
-    
+}
+

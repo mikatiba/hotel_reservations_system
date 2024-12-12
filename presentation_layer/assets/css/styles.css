@@ -11,3 +11,12 @@
     object-fit: cover;
     border-bottom: 1px solid #ddd;
 }
+
+.img-fluid {
+    transition: transform 0.3s ease-in-out;
+}
+
+.img-fluid:hover {
+    transform: scale(1.1);
+}
+
